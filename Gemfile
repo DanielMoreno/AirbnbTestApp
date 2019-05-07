@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #User Authentication with Devise
 gem 'devise'
+
+gem 'unicorn'

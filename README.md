@@ -6,6 +6,7 @@
 * Gems
 	- Rails 5.2.3
 	- Devise
+	- unicorn
 
 * Database
 	- sqllite3
@@ -46,3 +47,31 @@
 		Confirm ngnix is installed, else: sudo amazon-linux-extras install nginx1.12
 		sudo chown -R nginx:ec2-user /var/www/html
 		sudo chmod 2777 /var/www -R
+		cd /var/www/html/AirbnbTestApp
+		bundle install
+		bundle exec unicorn_rails -c config/unicorn.rb -E development -D 
+		sudo mkdir -p /var/run/unicorn && sudo chmod 777 /var/run/unicorn
+		sudo touch /etc/nginx/conf.d/AirbnbTestApp.conf
+		Add the following into the config:
+		```
+		upstream unicorn {
+		  server unix:/var/run/unicorn/unicorn_sample.sock;
+		}
+		server {
+		    listen 8080;
+		    server_name localhost;
+		    root /var/www/html/sample;
+
+		    access_log /var/log/nginx/myapp_access.log;
+		    error_log /var/log/nginx/myapp_error.log;
+
+		    try_files $uri/index.html $uri @unicorn;
+		    location @unicorn {
+		        proxy_set_header X-Real-IP $remote_addr;
+		        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		        proxy_set_header Host $http_host;
+		        proxy_pass http://unicorn;
+		    }
+		}
+		```
+		sudo service nginx restart
