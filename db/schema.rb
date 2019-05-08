@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_090842) do
+ActiveRecord::Schema.define(version: 2019_05_08_104349) do
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "home_type"
+    t.string "room_type"
+    t.integer "accommodates"
+    t.string "city"
+    t.integer "price"
+    t.string "title"
+    t.string "summary"
+    t.boolean "has_kitchen"
+    t.boolean "has_shampoo"
+    t.boolean "has_heating"
+    t.boolean "has_air_conditioning"
+    t.boolean "has_washer"
+    t.boolean "has_dryer"
+    t.boolean "has_wifi"
+    t.boolean "has_breakfast"
+    t.boolean "has_indoor_fireplace"
+    t.boolean "has_hangers"
+    t.boolean "has_iron"
+    t.boolean "has_hair_dryer"
+    t.boolean "has_laptop_workspace"
+    t.boolean "has_tv"
+    t.boolean "has_crib"
+    t.boolean "has_high_chair"
+    t.boolean "has_self_check_in"
+    t.boolean "has_smoke_detector"
+    t.boolean "has_carbon_monoxide_detector"
+    t.boolean "has_private_bathroom"
+    t.integer "bedrooms"
+    t.integer "beds"
+    t.integer "bathrooms"
+    t.string "address"
+    t.float "longitude"
+    t.float "latitude"
+    t.boolean "is_active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_rooms_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

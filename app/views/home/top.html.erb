@@ -2,7 +2,7 @@
 <% if user_signed_in? %>
   <p>View Room Listings
   <li>
-  <%= link_to('Rooms') %>        
+  <%= link_to "Rooms", rooms_path, class: "btn btn-primary" %>  
   </li>
   </p>
   <p>View Bookings
@@ -10,5 +10,6 @@
   <%= link_to('Bookings') %>        
   </li>
   </p>
-
+<% else %>
+  <p> Sign in or register to view available rooms and bookings. </p>
 <% end %>

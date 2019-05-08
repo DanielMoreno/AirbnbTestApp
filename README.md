@@ -1,5 +1,7 @@
 # README
 
+Currenting AWS Testing Server:  http://18.217.235.22:8080/
+
 * Ruby version
 	- Ruby 2.3.7 
 

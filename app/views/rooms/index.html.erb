@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-md-3">
+		<ul class="sidebar-list">
+			<li class="sidebar-item"><%= link_to "New Room", new_room_path, class: "sidebar-link" %></li>
+		</ul>
+	</div>
+	<div class="col-md-9">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Listings
+			</div>
+			<div class="panel-body">
+				<% @rooms.each do |room| %>
+					<div class="row">
+						<div class="col-md-7">
+							<h4><%= room.title %></h4>
+						</div>
+						<div class="col-md-3 right">
+							<%= link_to "Edit", edit_room_path(room.id), class: "btn btn-primary" %>
+						</div>
+					</div>
+					<hr>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
