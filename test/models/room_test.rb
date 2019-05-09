@@ -20,7 +20,7 @@ class RoomTest < ActiveSupport::TestCase
     assert_not room.save, "Created room was associated with a User"
   end
 
-    test "Test Room - Title" do
+  test "Test Room - Title" do
     room = user.rooms.new title: '', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo'
     assert_not room.save, "Created room did not have a title"
   end

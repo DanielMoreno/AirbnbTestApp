@@ -1,5 +1,6 @@
 class Room < ApplicationRecord
   belongs_to :user
+  has_many :bookings
 
   ## Intial information required to create a room
   validates :title, presence: true
