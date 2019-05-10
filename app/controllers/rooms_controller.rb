@@ -20,7 +20,7 @@ class RoomsController < ApplicationController
         params[:start_date], params[:end_date], 
         params[:start_date], params[:end_date],
         params[:start_date], params[:end_date],
-        )).where("rooms.city = ?", params[:city]).group("rooms.id")
+        )).where("rooms.city LIKE (?)", params[:city]).group("rooms.id")
     end
   end
 
