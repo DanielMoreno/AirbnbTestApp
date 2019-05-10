@@ -1,0 +1,88 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<%= link_to "Book this room in Search.", rooms_search_path, class: "btn btn-primary" %>  
+
+		<p> Room Information </p>
+		<!-- Info -->
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						Owner: <%= @room.user.first_name + ' ' + @room.user.last_name %>
+					</div>
+					<div class="col-md-9">
+						<h4><%= @room.title %></h4>
+						City: <%= @room.city %>
+						<br>
+						Price: $<%= @room.price %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- About -->
+		<div class="row">
+			<div class="col-md-12">
+				<h2>About This Listing</h2>
+				<p><%= @room.summary %></p>
+			</div>
+		</div>
+		<!-- Ameneties-->
+		<div class="row">
+			<div class="col-md-2">
+				<p>Ameneties</p>
+			</div>
+			<div class="col-md-10">
+				<div class="row">
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' if !@room.has_self_check_in %>">Self Check-in</li>
+							<li class="<%= 'text-line-through' if !@room.has_kitchen %>">Kitchen</li>
+							<li class="<%= 'text-line-through' if !@room.has_wifi %>">Wifi</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' if !@room.has_heating %>">Heating </li>
+							<li class="<%= 'text-line-through' if !@room.has_air_conditioning %>">Air Conditioning</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' if !@room.has_private_bathroom %>">Private Bathroom</li>
+							<li class="<%= 'text-line-through' if !@room.has_hair_dryer %>">Hair Dryer</li>
+							<li class="<%= 'text-line-through' if !@room.has_shampoo %>">Shampoo</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' if !@room.has_washer %>">Washer </li>
+							<li class="<%= 'text-line-through' if !@room.has_dryer %>">Dryer</li>
+							<li class="<%= 'text-line-through' if !@room.has_iron %>">Iron</li>
+							<li class="<%= 'text-line-through' if !@room.has_hangers %>">Hangers</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' if !@room.has_breakfast %>">Breakfast </li>
+							<li class="<%= 'text-line-through' if !@room.has_laptop_workspace %>">Laptop Workspace</li>
+							<li class="<%= 'text-line-through' if !@room.has_tv %>">TV</li>
+							<li class="<%= 'text-line-through' if !@room.has_indoor_fireplace %>">Indoor Fireplace</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' if !@room.has_crib %>">Crib </li>
+							<li class="<%= 'text-line-through' if !@room.has_high_chair %>">High Chair</li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<ul class="amenities">
+							<li class="<%= 'text-line-through' if !@room.has_smoke_detector %>">Smoke Detector </li>
+							<li class="<%= 'text-line-through' if !@room.has_carbon_monoxide_detector %>">Carbon Monoxide Detector</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

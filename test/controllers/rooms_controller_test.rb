@@ -15,9 +15,8 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
   	user2.save!
   end
 
-  room = user1.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo'
+  room = user1.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo', price: 75
   room.save!
-  puts room.id
 
   test "Test - Index" do
     get rooms_path

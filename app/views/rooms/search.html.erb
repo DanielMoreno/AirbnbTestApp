@@ -1,0 +1,48 @@
+<%= form_tag rooms_search_path, method: :get do %>
+    <div class="form-group">
+      <label>City</label>
+      <%= text_field_tag :city, params[:city] %>
+    </div>
+    <div class="form-group">
+      <label>Start Date</label>
+      <%= date_field_tag :start_date, params[:start_date] ? params[:start_date] : Date.today %>
+    </div>
+    <div class="form-group">
+      <label>End Date</label>
+      <%= date_field_tag :end_date, params[:end_date] ? params[:end_date] : Date.today + 1 %>
+    </div>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+
+Found Rooms:
+	<div class="col-md-9">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Listings
+			</div>
+			<div class="panel-body">
+				<% @rooms.each do |room| %>
+					<div class="row">
+						<div class="col-md-7">
+							<h4><%= room.title %></h4>
+						</div>
+						<div class="col-md-3 right">
+							<%= link_to "View Room", room_path(room.id), class: "btn btn-primary" %>
+						</div>
+					</div>
+					<%= form_for([room, room.bookings.new]) do |f| %>
+						<%= f.hidden_field :start_date, value: params[:start_date] %>
+						<%= f.hidden_field :end_date, value: params[:end_date] %>
+						<%= f.hidden_field :room_id, value: room.id %>
+						<%= f.hidden_field :price, value: room.price %>
+						<%= f.hidden_field :total, id: 'booking_total' %>
+						<%= f.submit "Book Now", class: "btn btn-primary" %>
+
+						<br>
+						<br>
+					<% end %>
+					<hr>
+				<% end %>
+			</div>
+		</div>
+	</div>

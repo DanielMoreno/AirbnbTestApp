@@ -74,5 +74,28 @@ class BookingTest < ActiveSupport::TestCase
     booking = room.bookings.new start_date: '2019-6-5', end_date: '2019-6-15', price: 75, total: 500, 'user': user2
     assert_not booking.save, "Created booking with the start date same as the end date"
   end
-
+  test "Test Booking - Availability Same Date" do
+    booking1 = room.bookings.new start_date: '2019-6-5', end_date: '2019-6-15', price: 75, total: 750, 'user': user2
+    booking1.save!
+    booking2 = room.bookings.new start_date: '2019-6-5', end_date: '2019-6-15', price: 75, total: 750, 'user': user2
+    assert_not booking2.save, "Created booking an existing booking at the same time"
+  end
+  test "Test Booking - Availability Start Overlap" do
+    booking1 = room.bookings.new start_date: '2019-6-11', end_date: '2019-6-21', price: 75, total: 750, 'user': user2
+    booking1.save!
+    booking2 = room.bookings.new start_date: '2019-6-5', end_date: '2019-6-15', price: 75, total: 750, 'user': user2
+    assert_not booking2.save, "Created booking an existing booking at the same time"
+  end
+  test "Test Booking - Availability End Overlap" do
+    booking1 = room.bookings.new start_date: '2019-6-1', end_date: '2019-6-11', price: 75, total: 750, 'user': user2
+    booking1.save!
+    booking2 = room.bookings.new start_date: '2019-6-5', end_date: '2019-6-15', price: 75, total: 750, 'user': user2
+    assert_not booking2.save, "Created booking an existing booking at the same time"
+  end
+    test "Test Booking - Availability All Overlap" do
+    booking1 = room.bookings.new start_date: '2019-6-1', end_date: '2019-6-21', price: 75, total: 1500, 'user': user2
+    booking1.save!
+    booking2 = room.bookings.new start_date: '2019-6-5', end_date: '2019-6-15', price: 75, total: 750, 'user': user2
+    assert_not booking2.save, "Created booking an existing booking at the same time"
+  end
 end

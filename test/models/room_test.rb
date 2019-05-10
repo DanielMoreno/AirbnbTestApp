@@ -11,37 +11,42 @@ class RoomTest < ActiveSupport::TestCase
   end
 
   test "Test Room Creation" do
-    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo'
+    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo', price: 75
     assert room.save, "Basic room was not saved successfully"
   end
 
   test "Test User - Belongs To Association" do
-    room = Room.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo'
+    room = Room.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo', price: 75
     assert_not room.save, "Created room was associated with a User"
   end
 
   test "Test Room - Title" do
-    room = user.rooms.new title: '', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo'
+    room = user.rooms.new title: '', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo', price: 75
     assert_not room.save, "Created room did not have a title"
   end
 
   test "Test Room - Home Type" do
-    room = user.rooms.new title: 'test room', home_type: '', room_type: 'Private room', accommodates: 1, city: 'Tokyo'
+    room = user.rooms.new title: 'test room', home_type: '', room_type: 'Private room', accommodates: 1, city: 'Tokyo', price: 75
     assert_not room.save, "Created room did not have a home_type"
   end
 
   test "Test Room - Room Type" do
-    room = user.rooms.new title: 'test room', home_type: 'House', room_type: '', accommodates: 1, city: 'Tokyo'
+    room = user.rooms.new title: 'test room', home_type: 'House', room_type: '', accommodates: 1, city: 'Tokyo', price: 75
     assert_not room.save, "Created room did not have a room_type"
   end
 
   test "Test Room - Accommodates" do
-    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: nil, city: 'Tokyo'
+    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: nil, city: 'Tokyo', price: 75
     assert_not room.save, "Created room did not have a accommodates"
   end
   
   test "Test Room - City" do
-    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: ''
+    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: '', price: 75
     assert_not room.save, "Created room did not have a city"
+  end
+
+  test "Test Room - Price" do
+    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: '', price: nil
+    assert_not room.save, "Created room did not have a price"
   end
 end

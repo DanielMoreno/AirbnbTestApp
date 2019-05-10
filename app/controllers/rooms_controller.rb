@@ -9,6 +9,21 @@ class RoomsController < ApplicationController
     @rooms = current_user.rooms
   end
 
+  ## Provide model of existing room for editing - Room must belong to current user
+  def search
+    @rooms = [];
+    if(params.has_key?(:city))
+      @rooms = Room.select("rooms.*").where.not(id: Room.joins(:bookings).select("rooms.id").where(
+        "(bookings.start_date >= ? AND bookings.start_date <= ?)
+        OR (bookings.end_date >= ? AND bookings.end_date <= ?)
+        OR (bookings.start_date < ? AND bookings.end_date > ?)", 
+        params[:start_date], params[:end_date], 
+        params[:start_date], params[:end_date],
+        params[:start_date], params[:end_date],
+        )).where("rooms.city = ?", params[:city]).group("rooms.id")
+    end
+  end
+
   ## Show a specified room
   def show
   end

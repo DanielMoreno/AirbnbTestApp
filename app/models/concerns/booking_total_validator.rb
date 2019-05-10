@@ -1,3 +1,6 @@
+## 
+# Validator to check that the total amount given is the same as the Days * price.
+##
 class BookingTotalValidator < ActiveModel::Validator
   def validate(booking)
     ##check to see if valid data up to this point

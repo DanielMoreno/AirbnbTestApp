@@ -35,7 +35,10 @@
       <label>City</label>
       <%= f.text_field :city, placeholder: "What City?", class: "form-control" %>
     </div>
-  </div>
+    <div class="form-group">
+      <label>Price per Night $</label>
+      <%= f.number_field :price, placeholder: "123", class: "form-control" %>
+    </div>
   <div class="actions">
     <%= f.submit "Create" %>
   </div>

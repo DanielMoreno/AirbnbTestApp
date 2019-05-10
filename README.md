@@ -1,7 +1,28 @@
 # README
 
 Currenting AWS Testing Server:  http://18.217.235.22:8080/
+Seeded Testing Users:
+	email: TestOwner@test.com
+	password: qweqwe123
 
+	email: BookingTester@test.com
+	password: qweqwe123
+
+Seeded Testing Rooms:
+	city: Boston
+	title: Best Room in Boston
+
+	city: Boston
+	title: Worst Room in Boston
+
+Seeded Testing Bookings:
+	room: Worst Room in Boston
+	dates: 2019-6-1 -> 2019-6-11
+
+	room: Best Room in Boston
+	dates: 2019-6-19 -> 2019-6-29
+
+	
 * Ruby version
 	- Ruby 2.3.7 
 

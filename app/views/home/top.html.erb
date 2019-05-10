@@ -7,7 +7,11 @@
   </p>
   <p>View Bookings
   <li>
-  <%= link_to('Bookings') %>        
+  <%= link_to "Bookings", bookings_path, class: "btn btn-primary" %>          
+  </li>
+  <p>Find a Room
+  <li>
+  <%= link_to "Search", rooms_search_path, class: "btn btn-primary" %>         
   </li>
   </p>
 <% else %>

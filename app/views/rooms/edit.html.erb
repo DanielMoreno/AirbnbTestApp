@@ -38,17 +38,10 @@
   </div>
 
 
-<div class="row">
-  <div class="col-md-4">
     <div class="form-group">
-      <label>Price per Night</label>
-      <div class="input-group">
-        <div class="input-group-addon">$</div>
-        <%= f.text_field :price, class: "form-control" %>
-      </div>
+      <label>Price per Night $</label>
+      <%= f.number_field :price, placeholder: "123", class: "form-control" %>
     </div>
-  </div>
-</div>
 
   <div class="row">
     <div class="form-group">

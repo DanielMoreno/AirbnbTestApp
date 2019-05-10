@@ -1,3 +1,6 @@
+##
+# Validator to check the given price of the booking is the price of the room on creation.
+##
 class BookingPriceValidator < ActiveModel::Validator
   def validate(booking)
   	##check to see if valid data up to this point

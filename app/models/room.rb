@@ -8,5 +8,6 @@ class Room < ApplicationRecord
   validates :room_type, presence: true
   validates :accommodates, presence: true
   validates :city, presence: true
+  validates :price, presence: true
   validates :summary, length: {maximum: 250}
 end

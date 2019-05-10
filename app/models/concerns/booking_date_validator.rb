@@ -1,3 +1,6 @@
+##
+# Validator to check that the start date is before the end date, and not on the same day.
+##
 class BookingDateValidator < ActiveModel::Validator
   def validate(booking)
   	##check to see if valid data up to this point
