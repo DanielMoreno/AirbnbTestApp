@@ -2,9 +2,15 @@
 	<div class="panel-body">
 		Booking Information
 		  <li>
-			  <%= link_to "Room Info at: ", room_path({room_id: @booking.room.id}), class: "btn btn-primary" %>  
+			  <%= link_to "Room Info", room_path(@booking.room.id), class: "btn btn-primary" %>  
 		  </li>
 		<!-- About -->
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Confirmation Status</h2>
+				<p><%= @booking.confirmation_status %></p>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Nightly Price</h2>

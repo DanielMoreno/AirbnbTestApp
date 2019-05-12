@@ -19,6 +19,19 @@
 			  				<%= link_to "Room Info", room_path({id: booking.room.id}), class: "btn btn-primary" %> 
 						</div>
 					</div>
+					<br>
+					<%= form_for(booking, url: room_booking_path(booking.room.id, booking.id), html: { method: :delete }) do |f| %>
+					  <div class="actions">
+					    <%= f.submit "Cancel Booking" %>
+					  </div>
+					<% end %>
+					<br>
+					<div class="row">
+						<div class="col-md-12">
+							<h2>Confirmation Status</h2>
+							<p><%= booking.confirmation_status %></p>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<h2>Nightly Price: </h2>

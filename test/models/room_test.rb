@@ -46,7 +46,21 @@ class RoomTest < ActiveSupport::TestCase
   end
 
   test "Test Room - Price" do
-    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: '', price: nil
+    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo', price: nil
     assert_not room.save, "Created room did not have a price"
+  end
+
+  test "Test Room - Published without contract agreement" do
+    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo', price: 75,
+      is_published: true, contract_agreement: false
+    assert_not room.save, "Published room without accepting the contract agreement"
+  end
+
+  test "Test Room - Contract agreement retraction on published room" do
+    room = user.rooms.new title: 'test room', home_type: 'House', room_type: 'Private room', accommodates: 1, city: 'Tokyo', price: 75,
+      is_published: true, contract_agreement: true
+    room.save!
+    room.contract_agreement = false
+    assert_not room.save, "Retracted contract agreement on published room"
   end
 end

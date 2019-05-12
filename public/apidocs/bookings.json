@@ -1,0 +1,96 @@
+{
+  "apiVersion": "v1",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "bookings",
+  "apis": [
+    {
+      "path": "/room/{room_id}/bookings",
+      "operations": [
+        {
+          "summary": "View all bookings on a room belonging to the current user.",
+          "nickname": "Bookings#room_index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/room/{room_id}/bookings",
+      "operations": [
+        {
+          "summary": "Create a new booking",
+          "nickname": "Bookings#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/room/{room_id}/bookings/{id}",
+      "operations": [
+        {
+          "summary": "Show a specified booking",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": null,
+              "required": false
+            }
+          ],
+          "nickname": "Bookings#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/room/{room_id}/bookings/{id}",
+      "operations": [
+        {
+          "summary": "Accept or Decline a booking belonging to a room of the current user",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": null,
+              "required": false
+            }
+          ],
+          "nickname": "Bookings#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/room/{room_id}/bookings/{id}",
+      "operations": [
+        {
+          "summary": "Cancel an existing booking.",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": null,
+              "required": false
+            }
+          ],
+          "nickname": "Bookings#destroy",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "path": "/bookings",
+      "operations": [
+        {
+          "summary": "Show a list of all bookings belonging to the current user",
+          "nickname": "Bookings#index",
+          "method": "get"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

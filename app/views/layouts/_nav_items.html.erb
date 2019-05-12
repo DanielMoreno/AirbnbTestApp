@@ -1,19 +1,11 @@
-<h1>Airbnb Test</h1>
 <% if user_signed_in? %>
-  <p>View Room Listings
   <li>
   <%= link_to "Rooms", rooms_path, class: "btn btn-primary" %>  
   </li>
-  </p>
-  <p>View Bookings
   <li>
   <%= link_to "Bookings", bookings_path, class: "btn btn-primary" %>          
   </li>
-  <p>Find a Room
-  <li>
+    <li>
   <%= link_to "Room Search", rooms_search_path, class: "btn btn-primary" %>         
   </li>
-  </p>
-<% else %>
-  <p> Sign in or register to view available rooms and bookings. </p>
 <% end %>

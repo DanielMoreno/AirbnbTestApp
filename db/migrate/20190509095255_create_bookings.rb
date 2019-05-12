@@ -13,7 +13,11 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.integer :price
       t.integer :total
 
+      ## Confirmation message
+      t.string :confirmation_message
+
       ## Statuses
+      t.string :confirmation_status
       t.boolean :is_canceled
       
       t.timestamps

@@ -64,4 +64,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #User Authentication with Devise
 gem 'devise'
 
+#Live Server Deployment
 gem 'unicorn'
+
+gem 'grape-swagger-rails'
+gem 'swagger-docs'

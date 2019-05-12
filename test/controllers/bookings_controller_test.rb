@@ -30,4 +30,9 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     get room_booking_path(id: booking.id, room_id: booking.room.id)
     assert true
   end
+
+  test "Test - Room Index" do
+    get room_bookings_path(room_id: booking.room.id)
+    assert true
+  end
 end

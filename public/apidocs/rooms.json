@@ -1,0 +1,154 @@
+{
+  "apiVersion": "v1",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "rooms",
+  "apis": [
+    {
+      "path": "/rooms/search",
+      "operations": [
+        {
+          "summary": "Search for a room to book given a set of search parameters",
+          "parameters": [
+
+          ],
+          "nickname": "Rooms#search",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/rooms/{room_id}/contract_agreement",
+      "operations": [
+        {
+          "summary": "Update the Contract Agreement on a room",
+          "parameters": [
+
+          ],
+          "nickname": "Rooms#contract_agreement",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "path": "/rooms/{room_id}/publish",
+      "operations": [
+        {
+          "summary": "Publish or unpublish a room",
+          "parameters": [
+
+          ],
+          "nickname": "Rooms#publish",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "path": "/rooms",
+      "operations": [
+        {
+          "summary": "Show a list of all rooms belonging to the current user",
+          "nickname": "Rooms#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/rooms",
+      "operations": [
+        {
+          "summary": "Create a new room",
+          "nickname": "Rooms#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/rooms/new",
+      "operations": [
+        {
+          "summary": "Provide model to build a new room",
+          "nickname": "Rooms#new",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/rooms/{id}/edit",
+      "operations": [
+        {
+          "summary": "Provide model of existing room for editing - Room must belong to current user",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": null,
+              "required": false
+            }
+          ],
+          "nickname": "Rooms#edit",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/rooms/{id}",
+      "operations": [
+        {
+          "summary": "Show a specific room",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": null,
+              "required": false
+            }
+          ],
+          "nickname": "Rooms#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/rooms/{id}",
+      "operations": [
+        {
+          "summary": "Update an existing room - Room must belong to current user",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": null,
+              "required": false
+            }
+          ],
+          "nickname": "Rooms#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/rooms/{id}",
+      "operations": [
+        {
+          "summary": "Destroy an existing room - sets a existing room to inactive. Room cannot have any active bookings.",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": null,
+              "required": false
+            }
+          ],
+          "nickname": "Rooms#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

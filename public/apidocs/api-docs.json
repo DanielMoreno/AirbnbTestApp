@@ -1,0 +1,24 @@
+{
+  "apiVersion": "v1",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "apis": [
+    {
+      "path": "/apidocs/rooms.{format}",
+      "description": "Rooms"
+    },
+    {
+      "path": "/apidocs/bookings.{format}",
+      "description": "Bookings"
+    },
+    {
+      "path": "/apidocs/home.{format}",
+      "description": "Home"
+    }
+  ],
+  "authorizations": null,
+  "info": {
+    "title": "Airbnb Test API",
+    "description": "Test mock Airbnb API"
+  }
+}

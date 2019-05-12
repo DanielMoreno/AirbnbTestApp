@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2019_05_09_095255) do
     t.date "end_date"
     t.integer "price"
     t.integer "total"
+    t.string "confirmation_message"
+    t.string "confirmation_status"
     t.boolean "is_canceled"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,6 +64,8 @@ ActiveRecord::Schema.define(version: 2019_05_09_095255) do
     t.float "longitude"
     t.float "latitude"
     t.boolean "is_active"
+    t.boolean "is_published"
+    t.boolean "contract_agreement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_rooms_on_user_id"

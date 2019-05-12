@@ -51,6 +51,8 @@ class CreateRooms < ActiveRecord::Migration[5.2]
 
       ## Functional data
       t.boolean   :is_active
+      t.boolean   :is_published
+      t.boolean   :contract_agreement
       t.timestamps
     end
   end

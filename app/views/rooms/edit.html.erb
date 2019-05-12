@@ -1,8 +1,40 @@
 <h2>Edit Room</h2>
 
-<%= form_for(@room) do |f| %>
 <%= render "devise/shared/error_messages", resource: @room %>
 
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><%= link_to "Bookings", room_bookings_path(@room.id), class: "sidebar-link" %></li>
+    </ul>
+  </div>
+<br>
+<%= form_for(@room, url: room_path(@room), html: { method: :delete }) do |f| %>
+  <div class="actions">
+    <%= f.submit "Delete Room" %>
+  </div>
+<% end %>
+<br>
+<%= form_for(@room, url: room_publish_path(@room), html: { method: :put }) do |f| %>
+  <div class="actions">
+    <div class="form-group">
+      <%= f.check_box :is_published %> Published
+    </div>
+    <%= f.submit "Publish/Unpublish Room" %>
+  </div>
+<% end %>
+<br>
+<%= form_for(@room, url: room_contract_agreement_path(@room), html: { method: :put }) do |f| %>
+  <div class="actions">
+    <div class="form-group">
+      <%= f.check_box :contract_agreement %> Contract Agreement Accepted
+    </div>
+    <%= f.submit "Accept/Deny Contract Agreement" %>
+  </div>
+<% end %>
+<br>
+<br>
+<br>
+<%= form_for(@room) do |f| %>
   <div class="row">
     <div class="form-group">
       <label>Title</label>
