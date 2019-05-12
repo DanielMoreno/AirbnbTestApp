@@ -16,8 +16,6 @@ Currenting AWS Testing Server:  http://18.217.235.22:8080/
 	city: Boston
 	title: Worst Room in Boston
 
-	...
-
 *Seeded Testing Bookings:
 	room: Worst Room in Boston
 	dates: 2019-6-1 -> 2019-6-11
@@ -25,11 +23,9 @@ Currenting AWS Testing Server:  http://18.217.235.22:8080/
 	room: Best Room in Boston
 	dates: 2019-6-19 -> 2019-6-29
 
-	...
-
 * API Documentation
 	- Live Portal: http://18.217.235.22:8080/swagger
-	- Github Files: /public/apidocs
+	- Github Files: https://github.com/DanielMoreno/AirbnbTestApp/tree/master/public/apidocs
 	
 * Ruby version
 	- Ruby 2.3.7 
