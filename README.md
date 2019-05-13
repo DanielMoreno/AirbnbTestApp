@@ -1,8 +1,9 @@
 # README
 
-Currenting AWS Testing Server:  http://18.217.235.22:8080/
+Current AWS ECS Fargate Testing Server:  http://13.58.138.214:3000/
 
-* Seeded Testing Users:
+*Seeded Testing Users:
+
 	email: TestOwner@test.com
 	password: qweqwe123
 
@@ -10,26 +11,26 @@ Currenting AWS Testing Server:  http://18.217.235.22:8080/
 	password: qweqwe123
 
 *Seeded Testing Rooms:
+
 	city: Boston
 	title: Best Room in Boston
 
 	city: Boston
 	title: Worst Room in Boston
-
 	...
 
 *Seeded Testing Bookings:
+
 	room: Worst Room in Boston
 	dates: 2019-6-1 -> 2019-6-11
 
 	room: Best Room in Boston
 	dates: 2019-6-19 -> 2019-6-29
-
 	...
 
 * API Documentation
 	- Live Portal: http://18.217.235.22:8080/swagger
-	- Github Files: /public/apidocs
+	- Github Files: https://github.com/DanielMoreno/AirbnbTestApp/tree/master/public/apidocs
 	
 * Ruby version
 	- Ruby 2.3.7 
