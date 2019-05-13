@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: nouchka/sqlite3:latest
+    volumes:
+      - ./tmp/db:/var/lib/sqlite/data
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/var/www/html/AirbnbTestApp/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
