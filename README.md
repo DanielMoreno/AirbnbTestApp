@@ -1,6 +1,6 @@
 # README
 
-Currenting AWS Testing Server:  http://18.217.235.22:8080/
+Current AWS ECS Fargate Testing Server:  http://13.58.138.214:3000/
 
 *Seeded Testing Users:
 
